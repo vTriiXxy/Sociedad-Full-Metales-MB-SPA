@@ -1,0 +1,178 @@
+/* Variables de colores */
+:root {
+    --primary-color: #4e4c4c; /* Amarillo */
+    --secondary-color: #7a7200b9; /* Gris */
+    --background-color: #F9F9F9; /* Gris claro */
+    --text-color: #000000; /* Negro */
+    --white: #FFFFFF; /* Blanco */
+}
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    line-height: 1.6;
+}
+
+/* Contenedor general */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+    color: var(--white);
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--white);
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+/* Sección de Servicios */
+.servicios {
+    padding: 50px 20px;
+    background-color: var(--white);
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: var(--primary-color);
+}
+
+.servicios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+/* Recuadro de cada servicio */
+.servicio {
+    background-color: var(--background-color);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden; /* Evita que el contenido se desborde */
+    position: relative;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Efecto al pasar el cursor */
+.servicio:hover {
+    transform: scale(1.05); /* Agranda ligeramente el recuadro */
+    z-index: 10; /* Asegura que el recuadro esté por encima de los demás */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada */
+}
+
+/* Imagen dentro del recuadro */
+.servicio img {
+    width: 100%; /* La imagen ocupará el 100% del ancho del contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+    max-height: 300px; /* Altura máxima para evitar imágenes demasiado grandes */
+    object-fit: cover; /* Ajusta la imagen sin distorsión */
+    border-radius: 10px; /* Bordes redondeados */
+    margin: 10px 0; /* Espaciado entre la imagen y el texto */
+    transition: transform 0.3s ease; /* Animación para el zoom de la imagen */
+}
+
+.servicio:hover img {
+    transform: scale(1.1); /* Zoom en la imagen */
+}
+
+/* Título del servicio */
+.servicio h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: var(--text-color);
+}
+
+/* Descripción del servicio */
+.servicio p {
+    font-size: 1rem;
+    color: rgba(0, 0, 0, 0.7); /* Negro más claro */
+    margin-top: 10px;
+}
+
+/* Sección de Contacto */
+.contacto {
+    padding: 50px 20px;
+    background-color: var(--primary-color);
+    color: var(--white);
+    text-align: center;
+}
+
+.contacto a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+.contacto a:hover {
+    color: var(--secondary-color);
+}
+
+/* Footer */
+.footer {
+    background-color: var(--text-color);
+    color: var(--white);
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9rem;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero, .servicios, .contacto, .footer {
+    animation: fadeIn 1s ease-in-out;
+}
